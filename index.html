@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
-    <title>2048</title>
+    <title>方寸灵台</title>
 
     <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
-
+<script type="text/javascript" src="/js/common.js"></script>
 
 
 <style type="text/css">
@@ -18,12 +18,32 @@
 
    <script>
 
-window.location.herf = "/config.html";
+
+
+$(function() {
+
+var url = "#";
+
+var key = GetQueryString("key");
+if (key == "html") {
+    url = "/config.html";
+
+} else if (key == "ecook") {
+    url = "http://www.ecook.cn";
+}
+
+
+    window.location.href = url;
+
+
+
+})
+
 
    </script>
 
 </head>
 <body>
-    
+    hello~~
 </body>
 </html>
