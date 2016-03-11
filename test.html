@@ -28,12 +28,13 @@ var url = "#";
 var type = GetQueryString("type");
 var value = GetQueryString("value");
 
-var result = md5(value);
+
 if (type == "html") {
-$(body).html(result);
+	var result = md5(value);
+$("body").html(result);
 
 } else if (type == "write") {
-	document.write(result);
+	document.write("{'key':'value'}");
 }
 
 
