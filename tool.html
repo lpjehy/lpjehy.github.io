@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
-    <title>方寸灵台</title>
-    <link rel="shortcut icon" href="/favicon.ico" >
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+	<title>方寸灵台</title>
+	<link rel="shortcut icon" href="/favicon.ico" >
 
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="/js/common.js"></script>
-<script type="text/javascript" src="/js/md5.js"></script>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/md5.js"></script>
 
-<style type="text/css">
-      
-
-
-  
-  </style>
-
-   <script>
+	<style type="text/css">
+	
 
 
+	
+	</style>
 
-$(function() {
-
-var url = "#";
-
-var type = GetQueryString("type");
-
-
-$(body).html(key);
+	<script>
 
 
 
-})
+	$(function() {
+
+		var url = "#";
+
+		var type = GetQueryString("type");
+		var value = GetQueryString("value");
+
+		var result = "no operate!";
+		if (type == "md5") {
+			result = md5(value);
 
 
-   </script>
+		} else if (type == "write") {
+			
+		}
+
+
+		$("body").html(result);
+
+	})
+
+
+	</script>
 
 </head>
 <body>
-    hello~~
+	hello~~
 </body>
 </html>
