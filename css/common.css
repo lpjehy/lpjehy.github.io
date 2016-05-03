@@ -1,3 +1,8 @@
+
+body {
+	background-color: rgb(32,32,32);
+}
+
 #content{
 	top: -128px;
 	width: 1024px;
