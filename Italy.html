@@ -19,7 +19,8 @@
     <link href="http://pic.xiaochushuo.com/css/islider.css?v=3" rel="stylesheet" type="text/css">
     <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
     <script src="http://pic.xiaochushuo.com/js/islider.js"></script>
-
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -29,21 +30,36 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 
+
+function onWeixinReady() {   
+WeixinJSBridge.invoke('getNetworkType',{}, function(e){   
+WeixinJSBridge.log(e.err_msg); alert(e.err_msg); });   
+}
+
 $(function(){
+
+    document.addEventListener("WeixinJSBridgeReady", onWeixinReady, false);
 
 var musicUrl = "http://pic-xiaochushuo.oss-cn-hangzhou.aliyuncs.com/minisite/event/G20/Italy/Ornella%20Vanoni%20-%20Lappuntamento.mp3";
 if (Math.random() < 0.5) {
     musicUrl = "http://pic-xiaochushuo.oss-cn-hangzhou.aliyuncs.com/minisite/event/G20/Italy/Piero%20Umiliani%20-%20Crepuscolo%20Sul%20Mare.mp3";
 };
 
+
+wx.getNetworkType({
+    success: function (res) {
+        var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
+        alert(networkType);
+    }
+});
+
 var autoplay = "autoplay";
 var index = navigator.userAgent.indexOf("NetType/4G")
-alert(navigator.userAgent);
+
 if (index >= 0) {
     autoplay = "";
 };
 
-//var musicHtml = "<EMBED src=" + musicUrl + " width=0 height=0 volume=70 autostart=true></EMBED>";
 var musicHtml = "<audio " + autoplay + " src='" + musicUrl + "' controls='controls' style='width: 100%;'></audio>";
 $(".music").html(musicHtml);
 
