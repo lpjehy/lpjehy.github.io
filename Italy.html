@@ -55,8 +55,10 @@ $(function(){
         var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
         if (networkType != wifi) {
             playAudio("");
-            console.log("getNetworkType");
+            
         };
+
+        console.log(res.networkType);alert(res.networkType);
     }
 });
 
