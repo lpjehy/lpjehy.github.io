@@ -31,19 +31,20 @@ var _hmt = _hmt || [];
 
 $(function(){
 
-
-var type = navigator.connection.type;
-if (type == "") {};
-alert(type);
-return;
-
 var musicUrl = "http://pic-xiaochushuo.oss-cn-hangzhou.aliyuncs.com/minisite/event/G20/Italy/Ornella%20Vanoni%20-%20Lappuntamento.mp3";
 if (Math.random() < 0.5) {
     musicUrl = "http://pic-xiaochushuo.oss-cn-hangzhou.aliyuncs.com/minisite/event/G20/Italy/Piero%20Umiliani%20-%20Crepuscolo%20Sul%20Mare.mp3";
 };
 
+var autoplay = "autoplay";
+var index = navigator.userAgent.indexOf("NetType/4G")
+alert(navigator.userAgent);
+if (index >= 0) {
+    autoplay = "";
+};
 
-var musicHtml = "<EMBED src=" + musicUrl + " width=0 height=0 volume=70 autostart=true></EMBED>";
+//var musicHtml = "<EMBED src=" + musicUrl + " width=0 height=0 volume=70 autostart=true></EMBED>";
+var musicHtml = "<audio " + autoplay + " src='" + musicUrl + "' controls='controls' style='width: 100%;'></audio>";
 $(".music").html(musicHtml);
 
 });
@@ -364,9 +365,13 @@ $(".music").html(musicHtml);
 </head>
 
 <body style="background-color: #FEF9F5;">
+
     <div class="warp">
         <div class="main">
             <section style="margin-bottom: 0;">
+                <div class="music" style="width: 100%;">
+                </div>
+
                 <img src="http://pic-xiaochushuo.oss-cn-hangzhou.aliyuncs.com/minisite/event/G20/Italy/Italy.jpg@1e_180w_180h_1c_0i_0o_90q_1x.jpg" class="hidden"  alt="" />
                 <img src="http://pic-xiaochushuo.oss-cn-hangzhou.aliyuncs.com/minisite/event/G20/Italy/Italy.jpg" alt="goods" />
 
@@ -406,9 +411,7 @@ $(".music").html(musicHtml);
         </div>
     </div>
 
-<div class="music">
 
-</div>
     
 </body>
 
